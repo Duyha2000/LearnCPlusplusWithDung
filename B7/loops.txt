@@ -1,0 +1,170 @@
+https://docs.google.com/document/d/1pCQ_0_ez6xYZrkW1Z6fHZhW10koBOhvGmqc6yBo3_pw
+Bài 1:
+ int n;
+    cout << "Enter n: ";
+    cin >> n; // 2
+    // i: 2 -> 100
+//    for (int i = n; i <= 100; i++) {
+//        if (i % 2 == 0)
+//            cout << i << " ";
+//    }
+// from n -> to 100
+//    while (n <= 100) {
+//        if (n % 2 == 0) cout << n << " ";
+//        // steps:
+//        n++;
+//    }
+
+Bài 2:
+ int n;
+    int factorial = 1; // store
+    cout << "Enter n: ";
+    cin >> n; // 5
+//    for (int i = 1; i <= n; i++) {
+//        factorial *= i;
+//    }
+//    cout << factorial;
+    while (n >= 1) {
+        factorial *= n;
+//        steps:
+        n--;
+    }
+    cout << factorial;
+
+    Bài 4:
+     int a, b;
+        cout << "Enter a: ";
+        cin >> a; // 1 ->
+        cout << "Enter b: ";
+        cin >> b; // 50
+        // check giá trị tăng dần xem giá trị nào thỏa mãn
+        // 15 30 45 -> in ra nhiều lần
+        // cái gì in ra 1 lần thì in ngoài vòng for /while
+    //    while (a <= b) {
+    //        if (a % 3 == 0 && a % 5 == 0) {
+    //            cout << a;
+    //        }
+    //
+    ////        steps:
+    //        a++;
+    //    }
+    // for ( int i = ; i >= ; i++)
+    //    for (int i = a; i <= b; i++) {
+    //        if (i % 3 == 0 && i % 5 == 0)
+    //            cout << i << " ";
+    //    }
+
+    Bài 4:
+     do {
+            cout << "Enter choice: ";
+            cin >> choice;
+            switch (choice) {
+                case 1: {
+                    cout << "1. If a number is even or odd" << endl;
+                    int number1;
+                    cout << "Enter number: ";
+                    cin >> number1;
+                    if (number1 % 2 == 0) {
+                        cout << "eVEN NUMBER" << endl;
+                    } else
+                        cout << "ODD NUMBER" << endl;
+                    break;
+                }
+                case 2: {
+
+                    cout << "2. if a number is prime" << endl;
+                    int number2;
+                    cout << "Enter number: ";
+                    cin >> number2;
+                    bool isCheck = true;
+                    for (int i = 2; i < number2; i++) {
+                        if (number2 % i == 0)
+                            isCheck = false;
+                    }
+                    if (isCheck)
+                        cout << "Prime number ";
+                    else
+                        cout << "Not prime number";
+                    break;
+                }
+
+
+
+                    // n = 13: 2 - 12 (n-1) (số 13 không chia hết cho số khác)
+                    // n = 17: 2 - 16 (n-1) (số 16 không chia hết cho số khác)
+                    // n = 14: 2 - 13 (n-1) (số 14 chia hết cho 2,7
+                    // In trong vòng for (boolean isCheck = true -> false + break)
+                case 3: {
+                    cout << "3.If number is divisible by 3";
+                    int number3;
+                    cout << "Enter number: ";
+                    cin >> number3;
+                    if (number3 % 3 == 0)
+                        cout << number3 << " is divisible by 3";
+                    break;
+                }
+                case 4: {
+                    cout << "4. Exit";
+                    break;
+                }
+                default:
+                    cout << "Choose again from 1-4";
+            }
+
+
+        } while (choice != 4);
+
+Bài 4:
+ int choice;
+    do {
+        cout << "Enter choice: ";
+        cin >> choice;
+        switch (choice) {
+            case 1: {
+                cout << "1. Calc the perimeter and area of rectangle" << endl;
+                int a, b;
+                cout << "a: ";
+                cin >> a;
+                cout << "b: ";
+                cin >> b;
+                int perimeter = 2 * (a + b);
+                cout << "Perimeter: " << perimeter;
+                int area = a * b;
+                cout << "Area: " << area;
+                break;
+            }
+            case 2: {
+                cout << "Calc Perimeter and area of triangle" << endl;
+                double c, d, e;
+                cout << "C: ";
+                cin >> c;
+                cout << "d: ";
+                cin >> d;
+                cout << "E: ";
+                cin >> e;
+                double perimeterTri = c + d + e;
+                cout << "PErimeter: " << perimeterTri;
+                double p = perimeterTri / 2;
+                double areaTri = sqrt(p * (p - c) * (p - d) * (p - e));
+                cout << "Area: " << areaTri;
+                break;
+            }
+            case 3: {
+                int r;
+                const double PI = 3.14;
+                cout << "Radius: ";
+                cin >> r;
+                double perimeterCir = 2 * PI * r;
+                cout << "Perimeter Circle: " << perimeterCir;
+                double areaCir = PI * pow(2, r);
+                cout << "Area Circle: " << areaCir;
+                break;
+            }
+            case 4: {
+                cout << "Exit";
+                break;
+            }
+            default:
+                cout << "Choose 1-4";
+        }
+    } while (choice != 4);

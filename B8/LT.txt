@@ -1,0 +1,61 @@
+//    Khái niệm: C++, Java (Object, số , chữ)
+    // Khởi tạo array:
+
+    int tests2[] = {9, 4, 3, 7, 5}; //  bết trước các giá trị
+    // length array: int len = sizeof(arr) / sizeof(arr[0]);
+    int len = sizeof(tests2) / sizeof(tests2[0]);
+    cout << len << " len";
+
+    // Truy cập phân tử
+
+    // index: start -> 0, end -> length - 1
+    cout << tests2[2]; // 3
+    cout << tests2[0];
+//    cout << tests2[len - 1];
+    //         9 4 3 7 5 9 8 7 29 1
+    //index:   0 1 2 3 4 5 6 7 8 9
+    // tests2[15]
+//    cout << tests2[15]; // Index may have a value of '15' which is out of bounds
+    int tests[5];
+// Làm thế nào de gan cac gia tri vao array tests
+//    int number1, number2, number3, number4, number5;
+//    cin >> number1;
+//    tests[0] = number1;
+//
+//    cin >> number2;
+//    tests[1] = number2;
+//
+//    cin >> number3;
+//    tests[2] = number3;
+//
+//    cin >> number4;
+//    tests[3] = number4;
+//
+//    cin >> number5;
+//    tests[4] = number5;
+//    Input casc gia tri vao array
+// 0 1 2 3 4 -> index
+// tests[0] phan tu
+    for (int i = 0; i < 5; i++) {
+        int number;
+        cin >> number;
+        tests[i] = number;
+    }
+
+//    In ra cac phan tu trong array
+//    cout << tests[0];
+//    cout << tests[1];
+//    cout << tests[2];
+//    cout << tests[3];
+//    cout << tests[4];
+// Tìm vị trí, chỉ số thì mới dùng for i
+//    for (int i = 0; i < 5; i++) {
+//        cout << tests[i];
+//    }
+//  For each:
+//  5 4 3 2 1
+//  - - - - -
+//    for (int number : tests) {
+//        cout << number;
+//    }
+

@@ -1,0 +1,177 @@
+Exercise 1: Calculate the sum of array elements
+Requirement: Ask the user to input an array of integers, then calculate and display the sum of all elements in the array.
+Example Input: 1 2 3 4 5
+Example Output: sum = 15
+
+ int tests[5];
+    int sum = 0; // store
+    for (int i = 0; i < 5; i++) {
+        int number;
+        cin >> number;
+        tests[i] = number;
+    }
+
+    for (int number: tests) {
+        sum += number;
+    }
+    cout << sum;
+
+
+Exercise 2a: Find the largest and smallest elements in an array
+Requirement: Ask the user to input an array of integers, then find and display the largest and smallest numbers.
+Example Input: 3 4 5 4 5
+Example Output: Largest: 5, Smallest: 3
+
+- Step 1: Initialize two variables:
+largest to hold the largest number (initially set to a very small value, such as the first element of the array).
+smallest to hold the smallest number (initially set to a very large value, such as the first element of the array).
+
+- Step 2: Use a loop to iterate through the array:
+Compare each number with largest. If the current number is greater, update largest.
+Compare each number with smallest. If the current number is smaller, update smallest.
+
+- Step 3: After the loop ends, the values of largest and smallest will be the largest and smallest elements of the array.
+
+- Step 4: Display the results to the user:
+Output: "Largest: [value], Smallest: [value]".
+
+ int largest = tests[0];
+    int smallest = tests[0];
+
+    //  2 -> 9  -> 8  -> 7  -> 6
+    // -> -> -> -> -> -> -> -> ->
+    // largest = 2 -> so sánh với các số trong array
+    // Nếu các số trong array lơn hơn largest => Số lớn nhất là
+    for (int number: tests) {
+        if (number > largest) {
+            largest = number;
+        }
+        if (number < smallest) {
+            smallest = number;
+        }
+    }
+
+    cout << largest;
+
+    cout << smallest;
+
+
+Exercise 2b: Sort the array in ascending order
+Requirement: Ask the user to input an array of integers, then sort and display the array in ascending order.
+Example Input: [2, 9, 6, 6, 7, 8]
+Example Output: [2, 6, 6, 7, 8, 9]
+
+//    sort(a,a+n) -> a là tên array, n là số phần tử
+
+//    sort(tests, tests + 5);
+    sort(tests, tests + 5, greater<int>());
+    cout << tests[0];
+    cout << tests[4];
+//    for (int number: tests) {
+//        cout << number;
+//    }
+
+Exercise 3: Print the array in reverse order
+Requirement: Ask the user to input an array of integers, then print the array elements in reverse order (from last to first).
+Example Input: 2 9 8 7 9
+Example Output: 9 7 8 9 2
+
+ int tests[5];
+
+    for (int i = 0; i < 5; i++) {
+        int number;
+        cin >> number;
+        tests[i] = number;
+    }
+    for (int i = 4; i >= 0; i--) {
+        cout << tests[i] << " ";
+    }
+
+Exercise 4: Find the second largest element in an array
+Requirement: Ask the user to input an array of integers, then find and display the second largest number.
+Example Input: 3 4 5 4 5
+Example Output: 4
+
+
+
+Exercise 5: Count the occurrences of a value in an array
+Requirement: Ask the user to input an array of integers and a value. Find and display the number of times the value appears in the array.
+Example Input: Array: 3 4 5 3, Value: 3
+Example Output: 2
+
+int tests[5];
+    int count = 0;
+    int a;
+    cin >> a;
+    for (int i = 0; i < 5; i++) {
+        int number;
+        cin >> number;
+        tests[i] = number;
+
+    }
+    // 1 biến number X và so sánh X với các số trong array
+    // X = 3
+    // arr = [3,3,4,5]
+    // Output: 2
+
+    // for each: mỗi
+    // mỗi phần tử trong array (3 3 4 5)
+    for (int number: tests) {
+        if (number == a) {
+            count++;
+        }
+    }
+    cout << count;
+
+
+Exercise 6: Insert an element into an array
+Requirement: Ask the user to input an array, a position, and a number. Insert the number into the array at the given position. If the position is invalid, display an error.
+Example Input:
+
+Array: [3, 5, 6, 7]
+Position: 2
+Number: 5
+Example Output: [3, 5, 5, 6, 7]
+Exercise 7: Merge two arrays
+Requirement: Ask the user to input two arrays of integers, then merge and display the combined array.
+Example Input:
+
+Array 1: [3, 4, 5, 6]
+Array 2: [4, 5, 6]
+Example Output: [3, 4, 5, 6, 4, 5, 6]
+Exercise 8: Delete elements from an array
+Part 1: Input an index and delete the element at that position in the array.
+Example Input:
+
+Array: [4, 6, 7, 8]
+Index to delete: 2
+Example Output: [4, 6, 8]
+Part 2: Input a value and delete all occurrences of that value in the array.
+Example Input:
+
+Array: [5, 6, 7, 6, 6]
+Value to delete: 6
+Example Output: [5, 7]
+Exercise 9: Sort the array in ascending order
+Requirement: Ask the user to input an array of integers, then sort and display the array in ascending order.
+Example Input: [2, 9, 6, 6, 7, 8]
+Example Output: [2, 6, 6, 7, 8, 9]
+
+Exercise 10: Find two numbers in the array whose sum equals a target value
+Requirement: Ask the user to input an array of integers and a target value. Find and return two numbers from the array whose sum equals the target value.
+Example Input:
+
+Array: [2, 7, 11, 15]
+Target: 9
+Example Output: [2, 7]
+Explanation: 2 + 7 = 9
+Exercise 11: Check if the array is monotonic
+Requirement: Ask the user to input an array of integers. Determine whether the array is monotonic (entirely non-increasing or non-decreasing).
+Example Input: [3, 4, 5, 6, 7]
+Example Output: YES
+
+Exercise 12: Count the number of prime numbers in the array
+Requirement: Ask the user to input an array of integers. Count and display how many prime numbers exist in the array.
+Example Input: Array: [3, 4, 5, 6, 7]
+Example Output: 3
+Explanation: 3, 5, 7 are prime numbers.

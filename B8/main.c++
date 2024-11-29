@@ -1,32 +1,37 @@
 #include <iostream>
-#include <algorithm>
 
 using namespace std;
 
+// Function: biến gì thay đổi được sẽ viết vào tham số trong hàm (number)
+// Function để xử lý logic (không phải để input)
+int occurrences(int arr[], int sizeArr, int number) {
+    int count = 0;
+    for (int i = 0; i < sizeArr; i++) {
+        if (number == arr[i])
+            count++;
 
+    }
+    return count;
+}
+
+// Bài tập: Cho 1 array có n phần tử và giá trị X. Viết 1 function trả về vị trí đầu tiên mà phần tử trong array bằng X, nếu không có trả về -1
 int main() {
-    int tests[5];
-
-    for (int i = 0; i < 5; i++) {
-        int number;
-        cin >> number;
-        tests[i] = number;
+// Input, gọi hàm, output:
+    int sizeArr;
+    cin >> sizeArr;
+    int arr[sizeArr]; // mới khởi tạo
+    int number;
+    cin >> number;
+    // i < size (không bằng được, index start from 0 - to size - 1)
+    for (int i = 0; i < sizeArr; i++) {
+        int numberArr;
+        cin >> numberArr;
+        arr[i] = numberArr;
     }
-    // B1: Sắp xếp array giảm dần
-    // B2: Phần tử lớn nhất là phần tử đầu tiên
-    // B3: tìm phần tử nhỏ hơn phần tử đầu, nó sẽ là phần tử lớn thứ 2
-    sort(tests, tests + 5, greater<int>());
-    // -> 18 10 9 8 1
-    int larger2nd = tests[0]; // 18
-    for (int number: tests) {
-        // so sánh 18 với 10
-        if (number < larger2nd) {
-            larger2nd = number;
-            break;
-        }
-    }
-    cout << larger2nd;
 
-
+    number = occurrences(arr, sizeArr, number);
+    cout << number;
     return 0;
 }
+
+

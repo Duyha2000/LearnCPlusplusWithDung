@@ -1,0 +1,38 @@
+// Quản lý dữ liệu có cùng kiểu dữ liệu: ngay khi khởi tạo array phải cung cấp cho nó 1 số vùng nhớ nhất định [- - - - -]  -> kích thước ko đổi được, ko thêm, xóa phần tử được
+// Array: mảng tĩnh, ko đổi được:   int arr[]={1,2,3,4,5};
+//Vector: mảng động, thay đổi số phần tử được
+vector<int> vec = {1, 2, 4, 5, 7, 13, 14};
+// Kích thước vector: cung cấp 1 số vùng nhớ -> gán giá trị vào
+// cout << vec.size();
+vector<int> vec2(3);
+for(int i = 0; i < 3;i++){
+  cin >> vec2[i];
+}
+
+// For i: vòng lặp sử dụng để xử lý bài toán liên quan vị trí
+// for(int i = 0; i < 3;i++){
+//   cout << vec2[i] << " \t";
+// }
+// Khả năng mở rộng, sắp xếp, đảo ngược vector
+
+// Thêm phần tử: push_back
+// vec2.push_back(88); // thêm vào vị trí cuối cùng array
+// // v.insert(v.begin()+ i, value) : i là vị trí, value là giá trị
+// // Thêm số 5 vào vị trí 2 của array:
+// vec2.insert(vec2.begin() + 2,11);
+// for(int v : vec2){
+//   cout << v << " \t";
+// }
+// cout << endl;
+// Xóa phần tử trong vector
+// vec2.clear(); xóa toàn bộ
+// vec2.pop_back(); // xóa phần tử cuối vector
+// erase: v.erase(v.begin()+ i): xóa theo vị trí mong muốn
+// vec2.erase(vec2.begin() + 1);
+// Sắp xếp array tăng dân: sort(vec2.begin(),vec2.end());
+// sắp xếp vector giảm dần:
+sort(vec2.begin(),vec2.end(), greater<int>());
+
+for(int v : vec2){
+  cout << v << " ";
+}

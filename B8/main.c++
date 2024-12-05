@@ -9,7 +9,6 @@ int occurrences(int arr[], int sizeArr, int number) {
     for (int i = 0; i < sizeArr; i++) {
         if (number == arr[i])
             count++;
-
     }
     return count;
 }

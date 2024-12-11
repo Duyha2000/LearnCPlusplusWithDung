@@ -14,7 +14,7 @@ int occurrences(int arr[], int sizeArr, int number) {
 }
 
 // Bài tập: Cho 1 array có n phần tử và giá trị X. Viết 1 function trả về vị trí đầu tiên mà phần tử trong array bằng X, nếu không có trả về -1
-int main() {
+int B8() {
 // Input, gọi hàm, output:
     int sizeArr;
     cin >> sizeArr;

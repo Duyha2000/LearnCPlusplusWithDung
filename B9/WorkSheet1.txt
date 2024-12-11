@@ -1,0 +1,113 @@
+#include <iostream>
+
+using namespace std;
+
+// Chọc vào địa chỉ vùng nhớ và thay đổi giá trị
+// int x = 10 ; -> [xx1357] <-
+// int y = 2 ;
+// int num ->                               [-]
+void refVarFunc(int &num1, int num2) {
+    // num1 = 10;
+    for (int i = 0; i < 5; i++) {
+        num1++;
+        num2 += 2;
+    }
+}
+// pass by ref
+//void swapNumberRef(int *a, int *b) {
+//    swap(*a, *b);
+//    int temp = *a;
+//    *a = *b;
+//    *b = temp; }
+//
+//void swapNumber(int &a, int &b) {
+//    swap(a, b);
+//}
+
+
+// pass by value:
+//void swapNumberbyValue(int a, int b) {
+//    swap(a, b);
+//    cout << a << b;
+//}
+
+//
+int main() {
+    int x = 10, y = 2;
+    cout << "Before: " << x << " " << y << endl;
+    refVarFunc(x, y);
+    cout << "After: " << x << " " << y;
+
+//    int a = 3; // xx1234
+//    int b = 5; // xx1238
+//    cout << "Before swap:" << a << b; // a = 3 , b = 5     - -                  [5 3]
+////    swapNumber(&a, &b); // reference
+////    swapNumberbyValue(a, b);
+//    swapNumber(a, b);
+//    cout << "After swap:" << a << b;
+//    int a = 8, b = 5;
+//    int result = a / b;
+//    cout << result;
+    // a++ ++a
+//    cout << a++; // a = 5 -> a = 6 -> in ra trước rồi mơi tăng (chạy từ trái qua phải)
+//    cout << a;
+//    cout << ++a; //
+//    cout << a;
+//    int someNum = 2, anotherNum = 3, lastNum = 1;
+//    bool aBool;
+//    aBool = !(++someNum > (--anotherNum * lastNum++));
+//    cout << aBool; // false
+//    int counter = 0;
+//    bool moreThan20 = false;
+//
+//    while (!moreThan20) { // true
+//
+//        if (counter != 6) {
+//            cout << counter << endl; // 0 2 4 8 10 12 14 Getting close 16 18 Almost there 20 22 ..It's over twenty...
+//        }
+//
+//
+//        if (counter == 14) {
+//            cout << "...Getting close..." << endl; // "...Getting close..."
+//        } else if (counter == 18) { // 16 17 almost there ...
+//            cout << "...Almost there..." << endl; // "...Almost there..."
+//        }
+//
+//
+//        if (counter > 20) { // 19 20 itss over 20
+//            cout << "...It's over twenty..." << endl;
+//            moreThan20 = true;
+//        }
+//
+//        // step:
+//        counter += 2; // 2 3 4 5 7 8 9 10 11 12 13 getting close ... 15 16 17 almost tere 19 it over twnty
+//    }
+
+//    string name1 = "John", name2 = "Jane", name3 = "Devin", name4 = "John ";
+//    // [J]ohn
+//    // [J]ane
+//    // John > Jane
+//    // name1 ="John"
+//    // name2 = "Za" -> name2 > name1
+//    bool result = name1 < name2;
+//    cout << result << endl; // false
+//
+//    bool result2 = name2 > "Janet"; // false
+//    cout << result2 << endl;
+//    // ASCII: 65-96 là chữ hoa (A - Z), 97 - 126 là chữ thường(a -z)
+//    bool result3 = name3 != "devin"; // true
+//    cout << result3 << endl;
+//    bool result4 = name3 < "DEVIN";// false
+//    cout << result4 << endl;
+//    bool result5 = name1 == name4; // ko so sánh 2 chuỗi được với nhau
+//    // name1 => 4 byte trong vùng nhớ RAM [xx1234 xx1235 xx1236 xx1237]
+//    // name2 => 4 byte trong vùng nhớ RAM [xx128 xx1239 xx1240 xx1241]
+//    // so sánh 2 string bằng == -> so sánh "địa chỉ" của 2 biến chứ không phải so sánh giá trij
+//    // so sánh 2 array, object,
+//    //    int arr1[] = {1, 3, 5, 7, 9};
+//    //    int arr2[] = {1, 3, 5, 7, 9};
+//
+//    cout << result5 << endl;
+
+    return 0;
+}

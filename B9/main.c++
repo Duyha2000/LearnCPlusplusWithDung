@@ -1,36 +1,37 @@
 #include <iostream>
 
 using namespace std;
-int global = 3;
-
-
-//void value(int a, int b) {
-//    int local = 5;
-//    cout << global << endl;
-//}
-int sum(int a, int b) {
-    return a + b;
+void selectionSort(int arr[], int size){
+    for (int i = 0; i < size -1; i++){
+        int min_Index = i; // 0
+        for (int j = i+1; j < size; j++){
+            if(arr[min_Index] > arr[j]){
+                min_Index = j; // 5
+            }
+        }
+        swap(arr[i], arr[min_Index]);
+    }
 }
 
-// Overload: function  se duoc goi dua vao so luong tham so duoc truyen vao
-int sum(int a, int b, int c) {
-    return a + b + c;
+void bubbleSort(int arr[], int size){
+    for (int i = 0; i < size - 1; i++){
+        for (int j = 0; j < size - 1; j++){
+            if(arr[j] < arr[j+1]){
+                swap(arr[j], arr[j+1]);
+            }
+        }
+    }
 }
 
 int main() {
-    int a = 3, b = 4, c = 5;
-    cout << sum(a, b, c);
-//    cout << global << endl;
-//    cout << local;
-//    for (int i = 0; i < 5; i++) {
-//        int pos = 5;
-//    }
-//    if(true){
-//        int pos = 5;
-//    }
-//    cout << pos;
+    int size = 6;
+    int arr[] = {1,0,3,2,9,-2};
+//    selectionSort(arr,size);
+    bubbleSort(arr,size);
+    for(int ele : arr){
+        cout << ele << "\t";
+    }
 
-// Bin phạm vi local sẽ chỉ có tác dụng trong cặp ngoặc nhọn {} -> if, for, function
-// Global:
     return 0;
 }
+

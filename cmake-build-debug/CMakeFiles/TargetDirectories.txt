@@ -1,3 +1,0 @@
-C:/Users/Duy/LearnCPlusplusWithDung/cmake-build-debug/CMakeFiles/LearnCPlusPlusWithDung.dir
-C:/Users/Duy/LearnCPlusplusWithDung/cmake-build-debug/CMakeFiles/edit_cache.dir
-C:/Users/Duy/LearnCPlusplusWithDung/cmake-build-debug/CMakeFiles/rebuild_cache.dir

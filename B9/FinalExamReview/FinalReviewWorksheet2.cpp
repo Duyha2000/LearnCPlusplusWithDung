@@ -63,9 +63,9 @@ global is located outside the function. local is located inside the function
 
     void doSomething(int a, double &b)
     {
-        for (int i = 0; i < a; i++)
+        for (int i = 0; i < a; i++) 0 1 2 3
         {
-            cout << ".";
+            cout << ".";. . . .
             b += 0.01;
         }
 
@@ -73,13 +73,15 @@ global is located outside the function. local is located inside the function
 
         a += 5;
 
-        cout << "A variable a is: " << a << endl;
+        cout << "A variable a is: " << a << endl; // A variable a is: 9
     }
     ----------------------------------------------------------------------------------------------------
     */
 
     int firstVal = 4;
     double secondVal = 3.14;
+    doSomething(firstVal,secondVal);
+    //
 
 
     /*
@@ -91,6 +93,8 @@ global is located outside the function. local is located inside the function
     Use a constant integer, named SIZE, to define the size.
     -----------------------------------------------------------------------------
     */
+    const int SIZE = 45;
+    string aBunchOfStuff[SIZE];
 
 
     /*
@@ -101,7 +105,7 @@ global is located outside the function. local is located inside the function
     and 'z' in one line.
     -----------------------------------------------------------------------------------------------------
     */
-
+char letters[]= {'a', 'b', 'c', 'd', 'z'};
 
     /*
     --------------------------------------------------------------------------
@@ -109,43 +113,97 @@ global is located outside the function. local is located inside the function
 
     What is a range-based for loop? How does it differ from a normal for loop?
     --------------------------------------------------------------------------
-    */
+    */ int array[5] ={2,3,4,5,1} ;
+for (int i  : array);
 
-
+// it checks each element in array
+for (int i = 0; i < 5; i++)
+    // it checks index of each element
     /*
     ----------------------------------------------------------------------------------------------------------------
-    PROBLEM #8
+    PROBLEM #8:
 
     Write a range-based for loop that will display every element in an array. Use the array 'numbers' defined below.
     ----------------------------------------------------------------------------------------------------------------
     */
 
     int numbers[] = {1, 5, 8, 34, 6, 73, 2};
-
+for (int i : number){
+    cout << i << " ";
+}
 
     /*
     --------------------------------------------------------------------------------------------------------------
     PROBLEM #9
 
     Complete the function 'arrayFunc' defined below the main function. The function should first display
-    every element in the passed array, and then add 5 each element. Don't forget to create the prototype.
+    every element in the passed array, and then add 5 each element. "Don't forget to create the prototype".
 
     Then, call the function using the defined array 'numbers2'. What will the values of the elements of 'numbers2'
     be after you call the function 'arrayFunc'?
     --------------------------------------------------------------------------------------------------------------
     */
+    void arrayFunc(int arr[], int size);
 
+    void arrayFunc(int arr[], int size){
+for (int i = 0; i < size; i++){
+    arr[i]+=5;
+    cout << arr[i] << " ";
+}
+    }
+int main() {
     int numbers2[] = {4, 5, 6, 7, 8};
-
-
+arrayFunc(number2[], 5);
+}
     /*
     ------------------------------------------------------------------------------------
     PROBLEM #10
 
     What are two algorithms used to search through arrays for a value? How do they work?
     ------------------------------------------------------------------------------------
-    */
+     // 3 5 7 9 10
+                                      ->
+     // value: 9
+     // Position: 3
 
+    */
+    // linear_search: check index of each element from the beginning to the end of an array
+    // binary_search: check index of element in the middle of array. if middle index = value => position of mid index
+    // else if: middle index < value => index on the left = middle index + 1;
+    // else : middle index > value => index on the right = middle index - 1;
+
+
+    int linear_search(int arr[], int size, int value){
+        int pos = -1;
+       for (int i = 0; i < size; i++){
+           if(arr[i] == value) {
+              pos = i;
+           }
+       }
+
+        return pos;
+    }
+    // 1 2 3 4 5 6 7 8
+    // value : 5
+    int binary_search(int arr[], int size, int value1){
+        int pos = -1;
+        int left = 0;
+        int mid;
+        int right = size - 1;
+        while (left <= right){
+            mid = (left+right)/2;
+            if(arr[mid] == value1){
+                pos = mid;
+                break;
+            }
+            else if(arr[mid] < value1){
+               left = mid + 1;
+            }
+            else // arr[mid] > value
+                right = mid - 1
+        }
+        return pos;
+    }
 
     /*
     --------------------------------------------------------------------
